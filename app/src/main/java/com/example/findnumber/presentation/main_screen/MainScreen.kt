@@ -35,7 +35,7 @@ fun MainScreen(navController: NavController) {
         },
             modifier = Modifier.align(Alignment.End)
         ) {
-            Text("To DetailScreen")
+            Text("Find Number")
         }
     }
 }
