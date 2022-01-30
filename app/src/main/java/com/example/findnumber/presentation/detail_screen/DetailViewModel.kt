@@ -24,14 +24,14 @@ class DetailViewModel(
         var oddNum = 0
 
         for (number in numbers.numbers) {
-            if(number % 2 == 0) {
-                evenNum = number
-                even++
-            } else {
-                oddNum = number
-                odd++
+                if(number % 2 == 0) {
+                    evenNum = number
+                    even++
+                } else {
+                    oddNum = number
+                    odd++
+                }
             }
-        }
 
         _state.value = if(even > odd)
             oddNum

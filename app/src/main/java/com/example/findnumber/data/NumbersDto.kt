@@ -8,6 +8,6 @@ data class NumbersDto(
 
 fun NumbersDto.toNumbers(): Numbers {
         return Numbers(
-            numbers.removeSurrounding(",").split(",").map { it.toInt() }
+            numbers.removeSurrounding(",").split(",").map { number -> number.toInt() }
         )
 }

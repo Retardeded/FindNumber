@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.findnumber.presentation.detail_screen.DetailViewModel
 import com.example.findnumber.presentation.main_screen.DetailScreen
 import com.example.findnumber.presentation.main_screen.MainScreen
+import com.example.findnumber.common.Constants
 
 @Composable
 fun Navigation() {
@@ -18,16 +19,14 @@ fun Navigation() {
             MainScreen(navController = navController)
         }
         composable(
-            route = Screen.DetailScreen.route + "/{name}",
+            route = Screen.DetailScreen.route + "/{${Constants.PARAM_NAME}}",
             arguments = listOf(
-                navArgument("name") {
+                navArgument(Constants.PARAM_NAME) {
                     type = NavType.StringType
-                    defaultValue = "10"
-                    nullable = true
                 }
             )
         ) { entry ->
-            entry.arguments?.getString("name")?.let { DetailViewModel(it) }?.let { DetailScreen(viewModel = it) }
+            entry.arguments?.getString(Constants.PARAM_NAME)?.let { DetailViewModel(it) }?.let { DetailScreen(viewModel = it) }
         }
         }
 }

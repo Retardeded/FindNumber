@@ -18,7 +18,7 @@ import com.example.findnumber.Screen
 @Composable
 fun MainScreen(navController: NavController) {
 
-    var text by rememberSaveable { mutableStateOf("Text") }
+    var text by rememberSaveable { mutableStateOf("1,2,3,5,7,9") }
     
     Column(verticalArrangement = Arrangement.Center,
     modifier = Modifier
