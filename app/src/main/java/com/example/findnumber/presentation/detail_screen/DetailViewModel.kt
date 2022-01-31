@@ -11,8 +11,8 @@ class DetailViewModel(
     numbersDto:String
 ) : ViewModel() {
 
-    private var _state = mutableStateOf(1)
-    val state: State<Int> = _state
+    private var _state = mutableStateOf("No outlier value found")
+    val state: State<String> = _state
 
     init {
 
@@ -33,9 +33,9 @@ class DetailViewModel(
                 }
             }
 
-        _state.value = if(even > odd)
-            oddNum
-        else
-            evenNum
+        if(odd == 1)
+            _state.value = oddNum.toString()
+        else if(even == 1)
+            _state.value = evenNum.toString()
     }
 }

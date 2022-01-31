@@ -34,7 +34,7 @@ fun MainScreen(navController: NavController) {
         )
         Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = {
-            var pattern = "([0-9],)+[0-9]$".toRegex()
+            var pattern = "(-?[0-9]+,)+-?[0-9]+$".toRegex()
             if(text.matches(pattern)) {
                 navController.navigate(Screen.DetailScreen.withArgs(text))
             }
