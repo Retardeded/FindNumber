@@ -33,9 +33,11 @@ class DetailViewModel(
                 }
             }
 
-        if(odd == 1)
-            _state.value = oddNum.toString()
-        else if(even == 1)
-            _state.value = evenNum.toString()
+        if(odd != even) {
+            if(odd == 1)
+                _state.value = oddNum.toString()
+            else if(even == 1)
+                _state.value = evenNum.toString()
+        }
     }
 }
